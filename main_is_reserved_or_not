@@ -1,0 +1,9 @@
+## Why "main" is NOT a Reserved Keyword
+1. Valid Variable Name: You can legally use the word main to name your variables, constants, or regular methods (e.g., int main = 10;).
+2. No Compiler Restriction: The Java compiler (javac) will never throw a syntax error just for using the word main outside of a starting method.
+3. JLS Status: The official Java Language Specification (JLS) categorizes main as a standard identifier, completely separate from restricted words like public, static, or void.
+
+##Why You MUST Use It to Run a Program
+1. JVM Entry Point: The Java Virtual Machine (JVM) is specifically coded to search for the exact name main when you command it to execute a class.
+2. Standardized Starting Line: It acts as the universal blueprint configuration for execution so the computer instantly knows where line one of your application begins.
+3. Launcher Requirement: Without it, the file will compile successfully, but the runtime launcher will crash with a NoSuchMethodError because it cannot find the designated starting gate.
