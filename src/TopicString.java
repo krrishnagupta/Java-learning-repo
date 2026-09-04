@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class TopicString {
@@ -25,6 +26,20 @@ public class TopicString {
         System.out.println(firstName.length());  // it gives the number of character that string it also includes spaces.
         System.out.println(firstName.charAt(4)); // it returns the character of that indexing
 //        System.out.println(firstName[0]); // we can not access the character of string like that
+    }
+
+    static void IF_StringIs_immutable(){
+        String str = "Krishna Kumar Gupta";
+        str = "Kanha Gupta";
+
+        System.out.println(str);
+
+        /*
+           Q. output: Kanha Gupta, why if it is immutable ?
+
+           => Because java assigns new memory address to the string value in the String pull of the Heap memory.
+           and the reference is change from old value to the new value.
+        */
     }
 
     static void ComparingStrings(){
@@ -74,12 +89,65 @@ public class TopicString {
         System.out.println("the value of nextLine() :" + str2);
     }
 
+    static void String_Methods(){
+        String str = "KRISHNA";
+        String str1 = "krishna";
+
+        System.out.println(str.length());  // .length()
+        System.out.println(str.charAt(1)); // .charAt()
+        System.out.println(str.equals(str1)); // .equals()
+        System.out.println(str.equalsIgnoreCase(str1)); // .equalsIgnoreCase()
+        System.out.println(str.isBlank()); // .isBlank()
+        System.out.println(str.isEmpty()); // .isEmpty()
+        System.out.println(str.toLowerCase()); // .toLowerCase()
+        System.out.println(str1.toUpperCase()); // .toUpperCase()
+
+
+        String name = "    krishna kuamar gupta    ";
+        System.out.println(name.length());
+        name = name.trim();   // .trim() = removes spaces from the beginning and at end of the string
+        System.out.println(name.length());
+
+        String replace = name.replace("k", "x"); // .replace(old char, new char)
+        System.out.println(replace);
+
+        String str3 = "hi there i am learning java, can you help me to learn it.";
+        System.out.println(str3.contains("learning")); // .contains("word") => check if the word is present in the string or not.
+        System.out.println(str3.substring(3, 10)); // .substring(beginning-index, end-index) , beginning-index is inclusive and end-index is exclusive.
+        System.out.println(str3.startsWith("hi"));  // .startsWith(string prefix)
+        System.out.println(str3.endsWith("it"));    // .endsWith(string sufix)
+
+
+        int num = 1234;
+        System.out.println(num + 1);
+        String str4 = String.valueOf(num);  // String.valueof(int value) => it changes integer value into string.
+        System.out.println(str4 + 1);
+
+        char[] chrr = str1.toCharArray(); // .toCharArray() => changes string into array of characters.
+        for(char ch : chrr){
+            System.out.println(ch);
+        }
+
+        String str5 = "my,name,is,krishna,kumar,gupta";
+        String[] words = str5.split(","); // .split("word or expression from where you want to split the string")
+        for(String st : words){
+            System.out.println(st);
+        }
+    }
+
     public static void main(String[] args) {
 
         String str = "Krishna Kumar Gupta";
-        str = "Kanha Gupta";  // output: Kanha Gupta, why if it is immutable ?
-        // Because java assigns new memory address to the string value in the String pull of the Heap memory.
-        // and the reference is change from old value to the new value.
+        str = "Kanha Gupta";
+
+        /* Q. output: Kanha Gupta, why if it is immutable ?
+           => Because java assigns new memory address to the string value in the String pull of the Heap memory.
+           and the reference is change from old value to the new value. */
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+//        Calling Methods here :-
+
+        String_Methods();
 
 
     }
