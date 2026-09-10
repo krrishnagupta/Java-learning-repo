@@ -92,10 +92,17 @@ public class Arrays {
 
 //        -------------------------------------------------------------------  //
 //        Liner search :
-        int target = 4;
-        for (int i = 0; i < Array.length; i++) {
-            if(Array[i] == target){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Search num : ");
+
+        int target = sc.nextInt();
+        for(int val : Array){
+            if(target == val){
                 System.out.println(true);
+                break;
+            } else{
+                System.out.println(false);
+                break;
             }
         }
     }
